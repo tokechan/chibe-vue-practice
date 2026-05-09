@@ -1,5 +1,3 @@
-console.log("chibivue is working");
-
 export type Options = {
   render: () => string;
 };
