@@ -1,8 +1,9 @@
 import { CreateAppFunction, createAppAPI } from "../runtime-core/apiCreateApp";
 import { createRenderer } from "../runtime-core/renderer";
 import { nodeOps } from "../runtime-dom/nodeOps";
+import { patchProp } from "./patchProps";
 
-const { render } = createRenderer(nodeOps);
+const { render } = createRenderer({ ...nodeOps, patchProp });
 const _createApp = createAppAPI(render);
 
 export const createApp = ((...args) => {
